@@ -1,4 +1,3 @@
-````markdown
 # 📚 Babel – E-Library Platform
 
 Babel is a full-stack **e-library web application** built with a **.NET backend** and a **React TypeScript frontend**.  
@@ -102,8 +101,4 @@ dotnet run
 cd babel-frontend
 npm install
 npm run dev
-```
-
-
-Do you want me to also add a **"System Workflow" diagram section** (mermaid diagram in Markdown) that shows the flow between **frontend → backend → Redis/DB/Hangfire/SignalR/MailKit**? That would make your README look 🔥.
 ```
