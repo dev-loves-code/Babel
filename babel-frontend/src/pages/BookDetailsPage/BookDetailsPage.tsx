@@ -267,7 +267,9 @@ const BookDetailsPage: React.FC = () => {
             <div className="action-buttons">
               <button
                 className={`btn ${book.quantity === 0 || !user || isBorrowed ? "btn-disabled" : "btn-success"}`}
-                disabled={book.quantity === 0 || !user || isBorrowed}
+                disabled={
+                  book.quantity === 0 || !user || isBorrowed || user.isBlocked
+                }
                 onClick={handleBorrowBook}
               >
                 {isBorrowed ? "Borrowed" : "Borrow Book"}
@@ -275,7 +277,7 @@ const BookDetailsPage: React.FC = () => {
 
               <button
                 className={`btn btn-outline ${!user ? "btn-disabled" : ""}`}
-                disabled={!user}
+                disabled={!user || user.isBlocked}
                 onClick={handleToggleWishlist}
               >
                 {inWishlist ? "Remove from Wishlist" : "Add to Wishlist"}
