@@ -72,7 +72,6 @@ It provides users with a modern online library experience including book borrowi
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/dev-loves-code/Babel.git
-cd babel-elibrary
 ````
 
 ### 2. Start infrastructure services
