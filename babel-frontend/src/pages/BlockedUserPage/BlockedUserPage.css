@@ -1,0 +1,64 @@
+.blocked-user-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7f3e9 0%, #f0ead6 50%, #e8dcc6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Georgia", serif;
+  color: #3a352f;
+}
+
+.blocked-user-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid #9d8b73;
+  max-width: 500px;
+  width: 100%;
+}
+
+.blocked-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.blocked-user-container h1 {
+  font-family: "Playfair Display", serif;
+  color: #2d2520;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+}
+
+.blocked-user-container p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-info {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e8dcc6;
+}
+
+.contact-info p {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .blocked-user-container {
+    padding: 30px 20px;
+  }
+
+  .blocked-icon {
+    font-size: 3rem;
+  }
+
+  .blocked-user-container h1 {
+    font-size: 1.8rem;
+  }
+}

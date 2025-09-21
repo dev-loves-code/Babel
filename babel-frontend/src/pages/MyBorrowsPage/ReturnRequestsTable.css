@@ -1,0 +1,95 @@
+.return-requests-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.return-requests-section h2 {
+  font-family: "Playfair Display", serif;
+  color: #2d2520;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.return-requests-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(74, 61, 50, 0.95);
+  border: 2px solid #9d8b73;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(45, 37, 32, 0.2);
+}
+
+.return-requests-table th {
+  font-family: "Playfair Display", serif;
+  color: #e8dcc6;
+  padding: 15px;
+  border-bottom: 2px solid #9d8b73;
+  text-align: left;
+}
+
+.return-requests-table td {
+  padding: 12px 15px;
+  color: #c9b896;
+  border-bottom: 1px solid rgba(157, 139, 115, 0.4);
+}
+
+.return-requests-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.return-requests-table tbody tr:hover {
+  background: rgba(184, 160, 130, 0.08);
+}
+
+/* Status colors */
+.status-0 {
+  color: #d4af37;
+} /* Pending - gold */
+.status-1 {
+  color: #8fbc8f;
+} /* Approved - sage green */
+.status-2 {
+  color: #cd5c5c;
+} /* Declined - muted red */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .return-requests-table,
+  .return-requests-table thead,
+  .return-requests-table tbody,
+  .return-requests-table th,
+  .return-requests-table td,
+  .return-requests-table tr {
+    display: block;
+  }
+
+  .return-requests-table thead {
+    display: none;
+  }
+
+  .return-requests-table tr {
+    margin-bottom: 15px;
+    border: 2px solid #9d8b73;
+    border-radius: 8px;
+    padding: 10px;
+    background: rgba(74, 61, 50, 0.95);
+  }
+
+  .return-requests-table td {
+    border: none;
+    padding: 8px 0;
+    color: #e8dcc6;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .return-requests-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #b8a082;
+    flex-basis: 50%;
+  }
+}

@@ -1,0 +1,337 @@
+/* Vintage library footer - WORKING VERSION */
+.footer {
+  background: linear-gradient(
+    135deg,
+    #4a3d32 0%,
+    #443831 50%,
+    #4a3d32 100%
+  ); /* weathered brown gradient */
+  color: #e8dcc6; /* warm cream */
+  font-family: "Georgia", serif;
+  padding: 3rem 1rem 1rem;
+  position: relative;
+  border-top: 3px solid #b8a082; /* muted antique gold border */
+}
+
+/* Decorative top border pattern */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #b8a082 20%,
+    #9d8b73 50%,
+    #b8a082 80%,
+    transparent 100%
+  );
+}
+
+/* Subtle texture overlay */
+.footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+      circle at 25% 25%,
+      rgba(232, 220, 198, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(184, 160, 130, 0.03) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* THREE EQUAL COLUMNS SIDE BY SIDE */
+  gap: 4rem; /* GENEROUS SPACING */
+  position: relative;
+  z-index: 1;
+  padding: 0 2rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px; /* ENSURES VISUAL BALANCE */
+}
+
+/* BRAND SECTION STYLING */
+.brand-section .brand-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem; /* SPACING FOR EYE COMFORT */
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  color: #b8a082; /* muted antique gold */
+  margin-right: 1rem;
+  stroke-width: 1.5;
+}
+
+.brand-section h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e8dcc6; /* warm cream */
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.brand-section .brand-header p {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #d4c4a8; /* soft cream */
+  margin: 0.25rem 0 0 0;
+  letter-spacing: 0.05em;
+}
+
+.brand-text {
+  margin: 0 0 2.5rem; /* MORE SPACING */
+  color: #d4c4a8; /* soft cream */
+  line-height: 1.7; /* BETTER READABILITY */
+  font-size: 1rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem; /* PROPER SPACING FROM TEXT */
+}
+
+.socials svg {
+  color: #b8a082; /* muted antique gold */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px;
+  background: rgba(184, 160, 130, 0.1);
+  border-radius: 50%;
+  border: 1px solid rgba(184, 160, 130, 0.3);
+}
+
+.socials svg:hover {
+  color: #e8dcc6;
+  background: rgba(184, 160, 130, 0.2);
+  border-color: rgba(184, 160, 130, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* QUICK LINKS SECTION */
+.footer-section h4 {
+  color: #e8dcc6; /* warm cream */
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 2rem; /* MORE SPACING */
+  letter-spacing: 0.05em;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 1.2rem; /* GENEROUS SPACING BETWEEN LINKS */
+}
+
+.footer-links a {
+  color: #d4c4a8 !important; /* NO BLUE LINKS - FORCE OVERRIDE */
+  text-decoration: none !important;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 1rem;
+  display: block;
+  padding-bottom: 0.5rem;
+}
+
+.footer-links a:visited {
+  color: #d4c4a8 !important; /* KEEP SAME COLOR FOR VISITED */
+}
+
+.footer-links a::before {
+  content: "❦";
+  position: absolute;
+  left: 0;
+  color: #b8a082;
+  font-size: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+/* Footer links hover effect already exists */
+.footer-links a:hover {
+  color: #e8dcc6 !important;
+  padding-left: 1.25rem;
+}
+
+.footer-links a:hover::before {
+  color: #e8dcc6;
+}
+
+/* Active link - same as hover */
+.footer-links a.active-link {
+  color: #e8dcc6 !important;
+  padding-left: 1.25rem;
+}
+
+.footer-links a.active-link::before {
+  color: #e8dcc6;
+}
+
+/* NEWSLETTER SECTION */
+.newsletter-section p {
+  color: #d4c4a8;
+  line-height: 1.7; /* BETTER READABILITY */
+  font-size: 0.95rem;
+  margin-bottom: 2rem; /* MORE SPACING */
+}
+
+.newsletter-form {
+  margin-bottom: 3rem; /* GENEROUS SPACING */
+}
+
+.newsletter-form input {
+  width: 100%;
+  padding: 1rem; /* LARGER TOUCH TARGET */
+  border: 1px solid rgba(184, 160, 130, 0.4);
+  border-radius: 4px;
+  background: rgba(232, 220, 198, 0.1);
+  color: #e8dcc6;
+  font-family: "Georgia", serif;
+  margin-bottom: 1.25rem; /* SPACING BETWEEN INPUT AND BUTTON */
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: #b8a082;
+  background: rgba(232, 220, 198, 0.15);
+}
+
+.newsletter-form input::placeholder {
+  color: #c9b896;
+  font-style: italic;
+}
+
+.newsletter-form button {
+  width: 100%;
+  padding: 1rem; /* LARGER TOUCH TARGET */
+  background: linear-gradient(135deg, #b8a082 0%, #9d8b73 100%);
+  color: #e8dcc6;
+  border: none;
+  border-radius: 4px;
+  font-family: "Georgia", serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+.newsletter-form button:hover {
+  background: linear-gradient(135deg, #9d8b73 0%, #8a7860 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info {
+  border-top: 1px solid rgba(184, 160, 130, 0.3);
+  padding-top: 2rem; /* MORE SPACING */
+  margin-top: 1rem;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem; /* MORE SPACING BETWEEN CONTACT ITEMS */
+  color: #d4c4a8; /* soft cream */
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.contact-info p svg {
+  color: #b8a082; /* muted antique gold */
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(184, 160, 130, 0.3);
+  text-align: center;
+  padding: 2rem 0; /* MORE PADDING */
+  margin-top: 3rem; /* MORE SPACING FROM CONTENT */
+  font-size: 0.9rem;
+  color: #c9b896; /* dusty gold */
+  position: relative;
+  z-index: 1;
+}
+
+/* Decorative center ornament */
+.footer-bottom::before {
+  content: "❦";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4a3d32;
+  color: #b8a082;
+  font-size: 1rem;
+  padding: 0 10px;
+}
+
+/* RESPONSIVE DESIGN - MOBILE ONLY */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr; /* STACK ON MOBILE ONLY */
+    gap: 3rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .footer-section {
+    min-height: auto;
+  }
+
+  .brand-section .brand-header {
+    justify-content: center;
+  }
+
+  .footer-links {
+    text-align: left;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .newsletter-section {
+    text-align: left;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .contact-info {
+    text-align: left;
+  }
+
+  .footer {
+    padding: 2.5rem 1rem 1rem;
+  }
+}

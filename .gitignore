@@ -1,0 +1,64 @@
+# ----------------------------
+# .NET / ASP.NET Core
+# ----------------------------
+bin/
+obj/
+[Bb]uild/
+[Ll]ogs/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+*.vscode/
+*.dbmdl
+*.bak
+*.log
+*.pdb
+*.cache
+*.dll
+*.exe
+*.appsettings.Development.json
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+project.lock.json
+
+# Rider
+.idea/
+
+# ----------------------------
+# Node / React / TypeScript
+# ----------------------------
+node_modules/
+build/
+dist/
+.cache/
+*.tsbuildinfo
+
+# Debug / logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Env files
+.env
+.env.*.local
+
+# ----------------------------
+# System files
+# ----------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*.temp
+*.bak

@@ -1,0 +1,353 @@
+/* Vintage library navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(244, 241, 232, 0.95); /* aged parchment with transparency */
+  color: #3a352f; /* deep charcoal brown */
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(184, 160, 130, 0.3);
+  box-shadow: 0 2px 8px rgba(45, 37, 32, 0.1);
+}
+
+.navbar.scrolled {
+  background: rgba(244, 241, 232, 0.98);
+  box-shadow: 0 4px 16px rgba(45, 37, 32, 0.15);
+  border-bottom: 1px solid rgba(184, 160, 130, 0.5);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  color: #b8a082; /* muted antique gold */
+  margin-right: 0.75rem;
+  stroke-width: 1.5;
+}
+
+/* Add decorative accent to logo */
+.logo::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #b8a082 0%, #9d8b73 100%);
+  border-radius: 50%;
+  border: 1px solid rgba(244, 241, 232, 0.8);
+}
+
+.logo-text span:first-child {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: block;
+  color: #2d2520; /* dark vintage brown */
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.logo-text span:last-child {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #5a5047; /* muted brown-gray */
+  font-family: "Georgia", serif;
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin: 0 1.5rem;
+  color: #3a352f;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Georgia", serif;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+/* Elegant underline effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #b8a082 0%, #9d8b73 100%);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #2d2520;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Keep underline for active link */
+.nav-links a.active,
+.nav-links a.active::after,
+.mobile-menu a.active,
+.mobile-menu a.active::after {
+  color: #2d2520;
+}
+
+.nav-links a.active::after,
+.mobile-menu a.active::after {
+  width: 100%;
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+.mobile-menu-btn button {
+  background: none;
+  border: none;
+  color: #3a352f;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn button:hover {
+  background: rgba(184, 160, 130, 0.1);
+  color: #2d2520;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background: rgba(244, 241, 232, 0.98);
+    border-top: 1px solid rgba(184, 160, 130, 0.3);
+    backdrop-filter: blur(8px);
+  }
+
+  .mobile-menu a {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(184, 160, 130, 0.2);
+    color: #3a352f;
+    text-decoration: none;
+    font-family: "Georgia", serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu a:hover {
+    background: rgba(184, 160, 130, 0.1);
+    color: #2d2520;
+    padding-left: 2rem;
+  }
+
+  .mobile-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .logo-text span:first-child {
+    font-size: 1.2rem;
+  }
+
+  .navbar-container {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Profile dropdown (desktop) */
+.profile-dropdown-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-profile .profile-trigger {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #3a352f;
+  cursor: pointer;
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.user-profile .profile-trigger:hover {
+  color: #2d2520;
+}
+
+.user-profile .username {
+  margin-left: 0.5rem;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  background: rgba(244, 241, 232, 0.98);
+  border: 1px solid rgba(184, 160, 130, 0.3);
+  box-shadow: 0 4px 12px rgba(45, 37, 32, 0.15);
+  border-radius: 6px;
+  min-width: 200px;
+  z-index: 1001;
+  overflow: hidden;
+  font-family: "Georgia", serif;
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(184, 160, 130, 0.2);
+}
+
+.user-avatar {
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(184, 160, 130, 0.1);
+}
+
+.user-info .dropdown-username {
+  font-weight: 600;
+  color: #2d2520;
+}
+
+.user-info .dropdown-email {
+  font-size: 0.85rem;
+  color: #5a5047;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: rgba(184, 160, 130, 0.2);
+  margin: 0.25rem 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  color: #3a352f;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(184, 160, 130, 0.1);
+  color: #2d2520;
+}
+
+.dropdown-item.logout {
+  color: #a33a3a;
+}
+
+.dropdown-item.logout:hover {
+  background: rgba(163, 58, 58, 0.1);
+  color: #7a1f1f;
+}
+
+/* Add to your Navbar.css */
+.profile-dropdown .lucide-icon,
+.mobile-nav-link .lucide-icon {
+  color: #b8a082;
+  stroke: #b8a082;
+}
+
+/* Or if you want to be more specific */
+.profile-dropdown svg,
+.mobile-nav-link svg {
+  color: #b8a082;
+  stroke: #b8a082;
+}
+
+/* Mobile profile items */
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  color: #3a352f;
+}
+
+.mobile-user-info span {
+  margin-left: 0.5rem;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  color: #3a352f;
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  background: rgba(184, 160, 130, 0.1);
+  color: #2d2520;
+  padding-left: 2rem;
+}
+
+.mobile-nav-link.logout {
+  color: #a33a3a;
+}
+
+.mobile-nav-link.logout:hover {
+  background: rgba(163, 58, 58, 0.1);
+  color: #7a1f1f;
+}
