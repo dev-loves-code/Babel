@@ -5,7 +5,6 @@ import "./AdminLayout.css"; // optional external CSS
 const AdminLayout: React.FC = () => {
   return (
     <div className="admin-layout">
-      {/* Sidebar */}
       <aside className="admin-sidebar">
         <h2 className="admin-title">Admin</h2>
         <nav className="admin-nav">

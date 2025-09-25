@@ -1,4 +1,3 @@
-// pages/BookListPage.tsx
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { bookService } from "../../services/bookService";

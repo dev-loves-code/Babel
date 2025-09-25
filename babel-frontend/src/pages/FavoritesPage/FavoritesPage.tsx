@@ -1,4 +1,3 @@
-// pages/FavoritesPage.tsx
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -12,7 +11,7 @@ interface GetWishlistDto {
   genreName: string;
   addedDate: string;
   isAvailable: boolean;
-  thumbnail?: string; // will store the fetched image
+  thumbnail?: string;
 }
 
 interface WishlistFilters {
@@ -41,7 +40,6 @@ const FavoritesPage: React.FC = () => {
     "Content-Type": "application/json",
   });
 
-  // Fetch thumbnail from Google Books
   const fetchBookThumbnail = async (title: string): Promise<string> => {
     try {
       const res = await fetch(

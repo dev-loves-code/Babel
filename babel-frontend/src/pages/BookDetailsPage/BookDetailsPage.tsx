@@ -30,7 +30,7 @@ const BookDetailsPage: React.FC = () => {
         const res = await axios.get(`http://localhost:5286/api/borrow/${id}`, {
           headers: getAuthHeader(),
         });
-        // If borrow exists => book is borrowed
+
         setIsBorrowed(res.data !== null);
       } catch (err) {
         console.error("Failed to check borrow status", err);
@@ -68,7 +68,6 @@ const BookDetailsPage: React.FC = () => {
 
         const bookData = await bookService.getBookById(Number(id));
 
-        // Fetch thumbnail from Google Books API
         const googleApiUrl = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(bookData.title)}`;
         const response = await fetch(googleApiUrl);
         const data = await response.json();
@@ -111,13 +110,11 @@ const BookDetailsPage: React.FC = () => {
 
     try {
       if (inWishlist) {
-        // ❌ Remove from wishlist
         await axios.delete(`http://localhost:5286/api/wishlist/book/${id}`, {
           headers: getAuthHeader(),
         });
         setInWishlist(false);
       } else {
-        // ➕ Add to wishlist
         await axios.post(
           `http://localhost:5286/api/wishlist`,
           { bookId: Number(id) },

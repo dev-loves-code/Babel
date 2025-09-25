@@ -42,7 +42,6 @@ export default function UsersPage() {
     const delayDebounce = setTimeout(() => {
       setLoading(true);
       if (query.trim() === "") {
-        // fetch all users if query is empty
         axios
           .get(`${API_URL}/account/search`, {
             headers: getAuthHeader(),
@@ -52,7 +51,6 @@ export default function UsersPage() {
           .catch((err) => console.error(err))
           .finally(() => setLoading(false));
       } else {
-        // fetch filtered users
         axios
           .get(`${API_URL}/account/search?query=${encodeURIComponent(query)}`, {
             headers: getAuthHeader(),
@@ -62,7 +60,7 @@ export default function UsersPage() {
           .catch((err) => console.error(err))
           .finally(() => setLoading(false));
       }
-    }, 300); // 300ms debounce
+    }, 300);
 
     return () => clearTimeout(delayDebounce);
   }, [query]);
@@ -73,7 +71,6 @@ export default function UsersPage() {
       const endpoint = `${API_URL}/account/${isBlocked ? "unblock" : "block"}/${userId}`;
       await axios.post(endpoint, {}, { headers: getAuthHeader() });
 
-      // Optimistic update
       setUsers((prev) =>
         prev.map((u) =>
           u.userId === userId ? { ...u, isBlocked: !isBlocked } : u

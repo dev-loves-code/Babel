@@ -1,4 +1,3 @@
-// services/bookService.ts
 import axios from "axios";
 import type { BookQueryObject, GetBookDto } from "../types/book.types";
 
